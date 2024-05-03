@@ -7,7 +7,7 @@ const ChartComponent = () => {
 
     useEffect(() => {
         const fetchData = () => {
-            axios.get('http://localhost:3000/data')
+            axios.get('http://localhost:8000/data')
                 .then(response => {
                     const uniqueLocations = [...new Set(response.data.map(item => item.location))].slice(0, 5);
                     const filteredData = response.data.filter(item => uniqueLocations.includes(item.location));
